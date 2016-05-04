@@ -25,14 +25,11 @@ public class ChatSocketServer extends Thread {
   public void run() {
     super.run();
     try {
-      Log.d(Consts.TAG, "in run");
       mServerSocket = new ServerSocket(Consts.SOCKET_SERVER_PORT);
       while (!shouldStop) {
-        Log.d(Consts.TAG, "server running");
         Socket socket = mServerSocket.accept();
         ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
         String message = (String) ois.readObject();
-        Log.d(Consts.TAG, "get message form client " + message);
         ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
         oos.writeObject("we get " + message);
         ois.close();
