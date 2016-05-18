@@ -38,6 +38,12 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
 
   public void setDataList(List<Model> dataList) {
     mDataList = dataList;
+    notifyDataSetChanged();
+  }
+
+  public void appendData(Model item) {
+    mDataList.add(item);
+    notifyItemInserted(getItemCount());
   }
 
   public static class ViewHolder extends RecyclerView.ViewHolder {
