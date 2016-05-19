@@ -5,16 +5,24 @@ package com.trails.chatroomdemo.model;
  */
 public class Model {
   public String messageContent;
+  public Templete templete;
 
   private Model(Builder builder) {
     this.messageContent = builder.messageContent;
+    this.templete = builder.templete;
   }
 
   public static final class Builder {
     String messageContent;
+    Templete templete;
 
     public Builder messageContent(String messageContent) {
       this.messageContent = messageContent;
+      return this;
+    }
+
+    public Builder templete(Templete templete) {
+      this.templete = templete;
       return this;
     }
 
@@ -23,7 +31,7 @@ public class Model {
     }
   }
 
-  public enum templete {
+  public enum Templete {
     MESSAGE_MY,
     MESSAGE_OTHERS
   }

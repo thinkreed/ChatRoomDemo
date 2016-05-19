@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
       mHandler.post(new Runnable() {
         @Override
         public void run() {
-          mAdapter.appendData(new Model.Builder().messageContent(message).build());
+          mAdapter.appendData(new Model.Builder().templete(Model.Templete.MESSAGE_OTHERS)
+              .messageContent(message).build());
         }
       });
     }
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         if (mEditText.getText().length() > 0) {
-          mClient.sendMessage(mEditText.getText().toString() + "\n");
+          mClient.sendMessage(mEditText.getText().toString());
           mEditText.setText("");
         }
       }

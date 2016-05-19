@@ -41,6 +41,11 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
     notifyDataSetChanged();
   }
 
+  @Override
+  public int getItemViewType(int position) {
+    return mDataList.get(position).templete.ordinal();
+  }
+
   public void appendData(Model item) {
     mDataList.add(item);
     notifyItemInserted(getItemCount());
@@ -58,7 +63,7 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
 
   protected ViewGroupPresenter createViewGroupPresenter(ViewGroup parent, Context context,
       int viewType) {
-    switch (Model.templete.values()[viewType]) {
+    switch (Model.Templete.values()[viewType]) {
       case MESSAGE_MY:
         return new ViewGroupPresenter(parent, context, R.layout.item_message_my)
             .add(new DisplayPresenter(), R.id.message_content);

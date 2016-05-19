@@ -80,11 +80,17 @@ public class ReedClient {
   }
 
   public void disconnect() {
-    try {
-      mSocket.close();
-    } catch (Exception e) {
-      Log.d(Consts.TAG, e.getMessage());
-    }
+    mHandler.post(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          mSocket.close();
+        } catch (Exception e) {
+          Log.d(Consts.TAG, e.getMessage());
+        }
+      }
+    });
+
   }
 
   private class receive implements Runnable {
@@ -100,6 +106,7 @@ public class ReedClient {
             }
           } catch (Exception e) {
             Log.e(Consts.TAG, e.getMessage());
+            break;
           }
         }
       }
