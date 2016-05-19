@@ -1,7 +1,7 @@
 package com.trails.chatroomdemo.model;
 
 /**
- * Created by huweijie on 16/5/4.
+ * Created by thinkreed on 16/5/4.
  */
 public class Model {
   public String messageContent;

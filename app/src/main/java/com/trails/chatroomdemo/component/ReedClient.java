@@ -14,7 +14,7 @@ import java.net.Socket;
 import java.net.SocketAddress;
 
 /**
- * Created by huweijie on 16/5/18.
+ * Created by thinkreed on 16/5/4.
  */
 public class ReedClient {
 

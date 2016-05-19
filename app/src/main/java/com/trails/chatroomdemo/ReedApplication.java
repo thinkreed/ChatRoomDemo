@@ -5,7 +5,7 @@ import android.app.Application;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
- * Created by huweijie on 16/5/4.
+ * Created by thinkreed on 16/5/4.
  */
 public class ReedApplication extends Application {
 

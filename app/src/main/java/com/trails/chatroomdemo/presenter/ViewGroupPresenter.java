@@ -10,7 +10,7 @@ import com.trails.chatroomdemo.adapter.ChatMessageAdapter;
 import com.trails.chatroomdemo.model.Model;
 
 /**
- * Created by huweijie on 16/5/4.
+ * Created by thinkreed on 16/5/4.
  */
 public class ViewGroupPresenter {
 
